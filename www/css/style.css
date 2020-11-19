@@ -1,20 +1,11 @@
 body{
     background:#ffe9e9;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.title{
-    background: #f46169;
-    color: #ffffff;
-    font-size: larger;
-    font-weight: 700;
+    font-family: 'Lato Bold', 'Lato Regular', 'Lato', 
 }
 
 .button{
     background: #f46169;
     color: #ffffff;
-    font-size: larger;
-    font-weight: 700;
     border-radius: 40px;
     border: 1px solid #ffffff;
     box-shadow: 1px 1px 4px 0px rgba(66, 83, 159, 0.35), inset 1px 2px 4px 0px rgba(66, 83, 159, 0);

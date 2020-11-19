@@ -12,29 +12,25 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script>
 		function showAlert() {
-			navigator.notification.alert("Test notification");
+			navigator.notification.alert("Notification!!!");
 		};
-		function showBeeps() {
-			navigator.notification.beep(2);
+		function showRing() {
+			navigator.notification.beep(3);
 		};
-		function showVibration() {
-			navigator.vibrate([20000]);
+		function showVibrate() {
+			navigator.vibrate([1000]);
 		}
 	</script>
 
 </head>
 
 <body class="container-fluid">
-	<p class="h4 text-center fixed-top title py-3">EVENT</p>
-	<div class="row vh-100">
-		<div class="col-12 align-self-center">
-			<div class="row justify-content-center">
-				<button type="button" class="btn btn-primary col-8 my-3" onclick="showAlert();">Show
-					notification</button>
-				<button type="button" class="btn btn-info col-8 my-3" onclick="showBeeps();">Show beep</button>
-				<button type="button" class="btn btn-warning col-8 my-3" onclick="showVibration();">Show
-					vibration</button>
-			</div>
+	<p style="color: #f46169;" class="h3 text-center pt-3">EVENT</p>
+	<div class="align-self-center my-5">
+		<div class="row justify-content-center">
+			<button type="button" class="btn btn-info col-8 my-3 py-3" onclick="showAlert();">Notification</button>
+			<button type="button" class="btn btn-danger col-8 my-3 py-3" onclick="showRing();">Ring a bell</button>
+			<button type="button" class="btn btn-warning col-8 my-3 py-3" onclick="showVibrate();">Vibrate</button>
 		</div>
 	</div>
 
@@ -47,7 +43,8 @@
 
 	<script type="text/javascript" src="js/navigator.js"></script>
 </body>
-<footer class="fixed-bottom text-center bg-white pt-2 border-top border-danger">
+
+<footer style="background: #ffe9e9;" class="fixed-bottom text-center pt-2 border-top border-danger">
 	<div class="row m-0 justify-content-center">
         <div class="col-4 align-self-center text-secondary" onclick="goToFeedback()">
             <i class="fa fa-pencil" style="font-size:x-large"></i>

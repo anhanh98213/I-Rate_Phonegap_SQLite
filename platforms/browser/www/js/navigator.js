@@ -1,6 +1,3 @@
-function goBack() {
-    window.history.back();
-}
 function goToFeedback(){
     window.location.href = "FeedBack.html";
 }

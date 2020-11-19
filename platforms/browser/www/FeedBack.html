@@ -13,30 +13,30 @@
 </head>
 
 <body class="container-fluid">
-    <p class="h4 text-center fixed-top title py-3">ADD FEEDBACK</p>
-    <div id="content" class="my-5 py-3">
+    <p style="color: #f46169;" class="h3 text-center pt-3">ADD FEEDBACK</p>
+    <div id="content" class="py-3 mb-5">
         <div class="form-group">
             <strong>Name of the reporter :</strong>
-            <input id="reporterName" type="text" class="form-control text-dark mt-2" required>
+            <input id="ReporterName" type="text" class="form-control text-dark mt-2" required>
         </div>
 
         <div class="form-group">
             <strong>Restaurant Name:</strong>
-            <input id="restauranName" type="text" class="form-control text-dark mt-2" required>
+            <input id="RestaurantName" type="text" class="form-control text-dark mt-2" required>
         </div>
-
         <div class="form-group">
             <strong for="restaurantType">Restaurant type:</strong>
-            <select class="form-control mt-2" id="restaurant_Type">
-                <option>Grill</option>
-                <option>Fast food</option>
-                <option>Seafood</option>
+            <select class="form-control mt-2" id="RestaurantType">
+                <option selected>&#128071 Choose...</option>
+                <option>&#127839 Fast food</option>
+                <option>&#127844 Seafood</option>
+                <option>&#127830 Grill</option>
             </select>
         </div>
 
         <div class="form-group">
             <strong>Date and time of the visit:</strong>
-            <input id="timevisit" type="date" class="form-control text-dark mt-2" required>
+            <input id="TimeVisit" type="date" class="form-control text-dark mt-2" required>
         </div>
 
         <div class="form-group">
@@ -45,16 +45,15 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
-                <input id="price" type="number" class="form-control text-dark text-right" aria-label="Amount (to the nearest dollar)" required>
-                <div class="input-group-append">
-                    <span class="input-group-text">.00</span>
-                </div>
+                <input id="AvarageMealPrice" type="number" class="form-control text-dark"
+                    aria-label="Amount (to the nearest dollar)" required>
             </div>
         </div>
 
         <div class="form-group">
             <strong for="serviceRating">Service rating:</strong>
-            <select class="form-control mt-2" id="service_Rating">
+            <select class="form-control mt-2" id="ServiceRating">
+                <option selected>&#128071 Choose...</option>
                 <option>&#128534 Need to improve</option>
                 <option>&#128512 Okay</option>
                 <option>&#128523 Good</option>
@@ -64,7 +63,8 @@
 
         <div class="form-group">
             <strong for="cleanlinessRating">Cleanliness rating:</strong>
-            <select class="form-control mt-2" id="cleanliness_Rating">
+            <select class="form-control mt-2" id="CleanlinessRating">
+                <option selected>&#128071 Choose...</option>
                 <option>&#128534Need to improve</option>
                 <option>&#128512 Okay</option>
                 <option>&#128523 Good</option>
@@ -74,7 +74,8 @@
 
         <div class="form-group">
             <strong for="foodQualityRating">Food quality rating:</strong>
-            <select class="form-control mt-2" id="food_Quality_Rating">
+            <select class="form-control mt-2" id="FoodQualityRating">
+                <option selected>&#128071 Choose...</option>
                 <option>&#128534 Need to improve</option>
                 <option>&#128512 Okay</option>
                 <option>&#128523 Good</option>
@@ -84,13 +85,13 @@
 
         <div class="form-group">
             <strong>Notes:</strong>
-            <textarea id="note" class="form-control text-dark mt-2" rows="3" required></textarea>
+            <textarea id="Note" class="form-control text-dark mt-2" rows="3" required></textarea>
         </div>
 
         <div class="row justify-content-center my-2">
             <button id="Add_Feedback" type="submit" onclick="insertData()"
                 class="button btn btn-block text-center border mx-2">
-                <p class="my-1">ADD FEEDBACK</p>
+                <p class="my-1 h5">ADD FEEDBACK</p>
             </button>
         </div>
     </div>
@@ -108,7 +109,7 @@
 </body>
 
 
-<footer class="fixed-bottom  text-center bg-white pt-2 border-top border-danger">
+<footer style="background: #ffe9e9;" class="fixed-bottom  text-center pt-2 border-top border-danger">
     <div class="row m-0 justify-content-center">
         <div class="col-4 align-self-center text-danger" onclick="goToFeedback()">
             <i class="fa fa-pencil" style="font-size:xx-large"></i>

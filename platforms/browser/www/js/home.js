@@ -14,16 +14,16 @@ function fetchData() {
                 <div class="card mt-2" style="width: 95%;">
                     <div class="card-body">
                         <div class="text-center">
-                            <h5 class="card-title">`+ note.restaurantName + ` </h5>
-                            <h6 class="card-subtitle mb-2 text-muted">`+ note.restaurantType + `</h6>
+                            <h5 class="card-title">`+ note.RestaurantName + ` </h5>
+                            <h6 class="card-subtitle mb-3 text-muted"> (`+ note.RestaurantType + `)</h6>
                         </div>
-                        <p>Name of the reporter: `+ note.reporterName + `</p>
-                        <p>Date and time of the visit: `+ note.visitDate + `</p>
-                        <p>Average meal price per person: `+ note.avarageMealPrice + `</p>
-                        <p>Service Rating: `+ note.serviceRating + `</p>
-                        <p>Cleanliness Rating: `+ note.cleanlinessRating + `</p>
-                        <p>Food Quality Rating: `+ note.foodQualityRating + `</p>
-                        <p>Notes: `+ note.notes + `</p>
+                        <p><strong>Name of the reporter: </strong>`+ note.ReporterName + `</p>
+                        <p><strong>Date and time of the visit: </strong>`+ note.VisitDate + `</p>
+                        <p><strong>Average meal price per person:  </strong>$`+ note.AvarageMealPrice + `</p>
+                        <p><strong>Service Rating: </strong>`+ note.ServiceRating +`</p>
+                        <p><strong>Cleanliness Rating: </strong>`+ note.CleanlinessRating + `</p>
+                        <p><strong>Food Quality Rating: </strong>`+ note.FoodQualityRating + `</p>
+                        <p><strong>Notes: </strong>`+ note.Notes + `</p>
                     </div>
                 </div>`
                 document.getElementById("content").innerHTML = contentInner
