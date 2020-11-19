@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Feedback</title>
+</head>
+
+<body class="container-fluid">
+    <p class="h4 text-center fixed-top title py-3">ADD FEEDBACK</p>
+    <div id="content" class="my-5 py-3">
+        <div class="form-group">
+            <strong>Name of the reporter :</strong>
+            <input id="reporterName" type="text" class="form-control text-dark mt-2" required>
+        </div>
+
+        <div class="form-group">
+            <strong>Restaurant Name:</strong>
+            <input id="restauranName" type="text" class="form-control text-dark mt-2" required>
+        </div>
+
+        <div class="form-group">
+            <strong for="restaurantType">Restaurant type:</strong>
+            <select class="form-control mt-2" id="restaurant_Type">
+                <option>Grill</option>
+                <option>Fast food</option>
+                <option>Seafood</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <strong>Date and time of the visit:</strong>
+            <input id="timevisit" type="date" class="form-control text-dark mt-2" required>
+        </div>
+
+        <div class="form-group">
+            <strong>Average meal price per person:</strong>
+            <div class="input-group mt-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input id="price" type="number" class="form-control text-dark text-right" aria-label="Amount (to the nearest dollar)" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <strong for="serviceRating">Service rating:</strong>
+            <select class="form-control mt-2" id="service_Rating">
+                <option>&#128534 Need to improve</option>
+                <option>&#128512 Okay</option>
+                <option>&#128523 Good</option>
+                <option>&#128525 Excellent</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <strong for="cleanlinessRating">Cleanliness rating:</strong>
+            <select class="form-control mt-2" id="cleanliness_Rating">
+                <option>&#128534Need to improve</option>
+                <option>&#128512 Okay</option>
+                <option>&#128523 Good</option>
+                <option>&#128525 Excellent</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <strong for="foodQualityRating">Food quality rating:</strong>
+            <select class="form-control mt-2" id="food_Quality_Rating">
+                <option>&#128534 Need to improve</option>
+                <option>&#128512 Okay</option>
+                <option>&#128523 Good</option>
+                <option>&#128525 Excellent</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <strong>Notes:</strong>
+            <textarea id="note" class="form-control text-dark mt-2" rows="3" required></textarea>
+        </div>
+
+        <div class="row justify-content-center my-2">
+            <button id="Add_Feedback" type="submit" onclick="insertData()"
+                class="button btn btn-block text-center border mx-2">
+                <p class="my-1">ADD FEEDBACK</p>
+            </button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/FeedBack.js"></script>
+    <script type="text/javascript" src="js/navigator.js"></script>
+</body>
+
+
+<footer class="fixed-bottom  text-center bg-white pt-2 border-top border-danger">
+    <div class="row m-0 justify-content-center">
+        <div class="col-4 align-self-center text-danger" onclick="goToFeedback()">
+            <i class="fa fa-pencil" style="font-size:xx-large"></i>
+            <p class="m-0" style="font-size: small; font-weight: bold;">Feedback</p>
+        </div>
+        <div class="col-4 align-self-center text-secondary" onclick="goToHome()">
+            <i class="fa fa-home " style="font-size:x-large"></i>
+            <p class="m-0" style="font-size: small; font-weight: bold;">Home</p>
+        </div>
+        <div class="col-4 align-self-center text-secondary" onclick="goToNotification()">
+            <i class="fa fa-calendar-check-o" style="font-size:x-large"></i>
+            <p class="m-0" style="font-size: small; font-weight: bold;">Event</p>
+        </div>
+    </div>
+</footer>
+
+</html>
