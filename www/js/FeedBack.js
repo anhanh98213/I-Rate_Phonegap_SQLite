@@ -5,7 +5,6 @@ function insertData() {
         confirmData()
     }
 }
-
 function insertFeedback(tx) {
     var ReporterName = document.getElementById("ReporterName").value
     var RestaurantName = document.getElementById("RestaurantName").value
@@ -22,11 +21,9 @@ function insertFeedback(tx) {
     tx.executeSql(executeQuery, [RestaurantName, RestaurantType, VisitDate, AvarageMealPrice,
         ServiceRating, CleanlinessRating, FoodQualityRating, Notes, ReporterName])
 }
-
 function errorCB(err) {
     alert("Error processing SQL: " + err.code);
 }
-
 function successCB() {
     window.location.href = "home.html"
 }
@@ -38,7 +35,7 @@ function validation() {
         alert("Invalid input fields!")
         return false
     } else return true
-
+    
 }
 
 function format(inputDate) {
@@ -46,6 +43,23 @@ function format(inputDate) {
     var date = new Date(inputDate);
     if (!isNaN(date.getTime())) {
         return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+    }
+}
+
+function validateString(id) {
+    let str = document.getElementById(id).value
+    if (str.length == 0) {
+        document.getElementById(id).classList.add("border-danger");
+        return false;
+    }
+    var letters = /[A-Za-z ]/;
+    if (str.match(letters)) {
+        document.getElementById(id).classList.remove("border-danger");
+        return true
+    }
+    else {
+        document.getElementById(id).classList.add("border-danger");
+        return false;
     }
 }
 
@@ -71,4 +85,12 @@ function confirmData() {
     if (r == true) {
         db.transaction(insertFeedback, errorCB, successCB)
     }
+}
+
+function deleteData() {
+    db.transaction(deleteSQL, errorCB, successCB);
+}
+
+function deleteSQL(tx) {
+    tx.executeSql("delete from iRate")
 }
