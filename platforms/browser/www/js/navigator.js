@@ -7,3 +7,6 @@ function goToHome() {
 function goToNotification() {
     window.location.href = "Notification.html";
 }
+function goToProfile() {
+    window.location.href = "profile.html";
+}

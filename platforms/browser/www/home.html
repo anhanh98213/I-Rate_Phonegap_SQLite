@@ -13,6 +13,13 @@
 
 <body class="container-fluid p-0 ">
     <p style="color: #f46169;" class="h3 text-center pt-3">LIST FEEDBACK</p>
+    <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="search()" >
+    <div class="row justify-content-around text-center mx-1">
+        <div id="Fast_food" class="col-2 bg-white card p-0" onclick="searchType('Fast_food')">Fast food</div>
+        <div id="Seafood" class="col-2 bg-white card p-0" onclick="searchType('Seafood')">Seafood</div>
+        <div id="Grill" class="col-2 bg-white card p-0" onclick="searchType('Grill')">Grill</div>
+        <div id="All" class="col-2 bg-white card p-0" onclick="searchType('All')">All</div>
+      </div>
     <div class="row justify-content-center m-0 mb-5" id="content"></div>
 
 
@@ -38,9 +45,9 @@
             <i class="fa fa-home " style="font-size:xx-large"></i>
             <p class="m-0" style="font-size: small; font-weight: bold;">Home</p>
         </div>
-        <div class="col-4 align-self-center text-secondary" onclick="goToNotification()">
+        <div class="col-4 align-self-center text-secondary" onclick="goToProfile()">
             <i class="fa fa-calendar-check-o" style="font-size:x-large"></i>
-            <p class="m-0" style="font-size: small; font-weight: bold;">Event</p>
+            <p class="m-0" style="font-size: small; font-weight: bold;">Profile</p>
         </div>
     </div>
 </footer>
