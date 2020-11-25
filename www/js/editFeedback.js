@@ -8,6 +8,10 @@ function onDeviceReady() {
     fetchData()
 }
 
+function goBack() {
+    window.history.back();
+}
+
 function fetchData() {
     db.transaction(function (tx) {
         tx.executeSql(`select * from iRate WHERE id='${idFeedback}'`, [], function (tx1, result) {
@@ -15,8 +19,6 @@ function fetchData() {
             var note = result.rows[0]
             console.log(note)
             contentInner = `
-            <i class="fa fa-trash" onclick="deleteFeedback()" style="font-size:24px"></i>
-
                 <div class="form-group">
                     <strong>Name of the reporter :</strong>
                     <input id="ReporterName" type="text" class="form-control text-dark mt-2" required value="${note.ReporterName}">

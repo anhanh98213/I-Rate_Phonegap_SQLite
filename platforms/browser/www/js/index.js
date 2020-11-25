@@ -3,14 +3,36 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var defaultFeedback = false
 var defaultUser = false
 function onDeviceReady() {
+    clearData();
     db.transaction(populate, error, success);
     createUser()
 }
+
+function clearData() {
+    db.transaction(tx => {
+        tx.executeSql("DROP TABLE iRate", [],
+            function (tx, result) {
+            },
+            function (tx, error) {
+                console.log('drop iRate:', error);
+            })
+    })
+    db.transaction(tx => {
+        tx.executeSql("DROP TABLE User", [],
+            function (tx, result) {
+            },
+            function (tx, error) {
+                console.log('drop User:', error);
+            })
+    })
+}
+
+
 function defaultData(tx) {
     var defaultData = [
         ["McDonald's", "&#127839 Fast food", "15/10/2020", "50.5", "&#128523 Good", "&#128523 Good", "&#128523 Good", "Good service quality", "Le Hong Thu", "Thu@gmail.com"],
         ["French Grill", "&#127830 Grill", "08/10/2020", "75.5", "&#128523 Good", "&#128523 Good", "&#128525 Excellent", "Delicious food", "Nguyen Thi Anh Anh", "Anh@gmail.com"],
-        ["SHELL FOOD-shellfish & sea food", "&#127844 Seafood", "28/10/2020", "115.8", "&#128523 Good", "&#128512 Okay", "&#128523 Good", "Good service quality", "Trinh Van Duy", "Anh@gmail.com"]
+        ["SHELL FOOD-shellfish & sea food", "&#127844 Seafood", "28/10/2020", "115.8", "&#128523 Good", "&#128512 Okay", "&#128523 Good", "Good service quality", "Nguyen Thi Anh Anh", "Anh@gmail.com"]
     ]
     var executeQuery = `INSERT INTO iRate (RestaurantName, RestaurantType, VisitDate, AvarageMealPrice, 
          ServiceRating, CleanlinessRating, FoodQualityRating, Notes, ReporterName, Email) VALUES (?,?,?,?,?,?,?,?,?,?)`;
@@ -28,7 +50,7 @@ function error(err) {
     alert("Error processing SQL: " + err.code);
 }
 
-function addSuccessCB() { 
+function addSuccessCB() {
     defaultFeedback = true
     goToLogin()
 }
@@ -36,6 +58,7 @@ function addSuccessCB() {
 function success() {
     db.transaction(defaultData, error, addSuccessCB);
 }
+
 function createUser() {
     db.transaction(function (tx) {
         tx.executeSql(`CREATE TABLE IF NOT EXISTS User ( id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,7 +67,7 @@ function createUser() {
             name VARCHAR(100),
             address VARCHAR(100),
             telephone VARCHAR(15),
-            job VARCHAR(50))`, 
+            job VARCHAR(50))`,
             [],
             function (tx, result) {
                 existinUser()
@@ -54,6 +77,7 @@ function createUser() {
             })
     })
 }
+
 function existinUser() {
     let existingData = [
         ["Duy@gmail.com", "12345678", "Trinh Van Duy", "Ha Nam", "0369549798", "Student"],
@@ -62,7 +86,7 @@ function existinUser() {
         ["Thu@gmail.com", "12345678", "Le Hong Thu", "Ha Noi", "0877781573", "Student"],
     ]
     let executeQuery = "INSERT INTO User (email, password, name, address, telephone, job) VALUES (?,?,?,?,?,?)";
-    db.transaction( function (tx){
+    db.transaction(function (tx) {
         existingData.forEach(element => {
             tx.executeSql(executeQuery, element,
                 function (tx, result) {
@@ -76,8 +100,8 @@ function existinUser() {
     })
 }
 
-function goToLogin(){
-    if (defaultFeedback && defaultUser){
-        window.location.href = "login.html";
+function goToLogin() {
+    if (defaultFeedback && defaultUser) {
+        setTimeout(function () { window.location.href = "login.html" }, 2000)
     }
 }

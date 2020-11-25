@@ -9,12 +9,23 @@
 </head>
 
 <body class="container-fluid">
-    <p style="color: #f46169;" class="h3 text-center pt-3">EDIT FEEDBACK</p>
+    <div class="row">
+        <div class="col-2 row">
+            <div class="align-self-center ml-2 mt-2">
+                <i onclick="goBack()" class="fa fa-chevron-left" style="font-size:medium"></i>
+            </div>
+        </div>
+        <div class="col-10 text-center">
+            <p style="color: #f46169;" class="h3 pt-3">EDIT FEEDBACK</p>
+        </div>
+    </div>
     <div id="content" class="py-3 mb-3"></div>
     <div class="row justify-content-center my-2">
-        <button id="Add_Feedback" type="submit" onclick="editFeedback()"
-            class="button btn btn-block text-center border mx-2">
-            <p class="my-1 h5">EDIT FEEDBACK</p>
+        <button type="submit" onclick="deleteFeedback()" class="col-5 mr-2 btn-secondary btn btn-block text-center">
+            <p class="my-1 h5">DELETE</p>
+        </button>
+        <button type="submit" onclick="editFeedback()" class="m-0 ml-2 col-5 button btn btn-block text-center">
+            <p class="my-1 h5">EDIT</p>
         </button>
     </div>
 
@@ -29,4 +40,5 @@
     <script type="text/javascript" src="js/editFeedback.js"></script>
     <script type="text/javascript" src="js/navigator.js"></script>
 </body>
+
 </html>

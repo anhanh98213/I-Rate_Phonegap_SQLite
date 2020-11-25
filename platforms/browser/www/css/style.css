@@ -1,6 +1,16 @@
 body{
-    background:#ffe9e9;
+    background:hsl(0, 63%, 97%);
+    font-family: 'Lato Bold', 'Lato Regular', 'Lato', ;
 }
+
+.text-main{
+    color: #f46169;
+}
+
+a:hover{
+    color: #f46169;
+}
+
 
 .button{
     background: #f46169;
@@ -9,11 +19,12 @@ body{
     font-weight: 700;
 }
 
-.border{
+.border-btn{
     border-radius: 45px;
     border: 1px solid #ffffff;
     box-shadow: 1px 1px 4px 0px rgba(66, 83, 159, 0.35), inset 1px 2px 4px 0px rgba(66, 83, 159, 0);
 }
+
 .avatar {
     position: absolute; 
     width: 40vw; 

@@ -13,14 +13,18 @@
 
 <body class="container-fluid p-0 ">
     <p style="color: #f46169;" class="h3 text-center pt-3">LIST FEEDBACK</p>
-    <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="search()" >
     <div class="row justify-content-around text-center mx-1">
-        <div id="Fast_food" class="col-2 bg-white card p-0" onclick="searchType('Fast_food')">Fast food</div>
-        <div id="Seafood" class="col-2 bg-white card p-0" onclick="searchType('Seafood')">Seafood</div>
-        <div id="Grill" class="col-2 bg-white card p-0" onclick="searchType('Grill')">Grill</div>
-        <div id="All" class="col-2 bg-white card p-0" onclick="searchType('All')">All</div>
-      </div>
-    <div class="row justify-content-center m-0 mb-5" id="content"></div>
+        <input style="width:90%;" id="search" class="form-control" type="search" placeholder="Search name restaurant" onkeyup="search()">
+    </div>
+    <p class="m-0 ml-4 mt-3 mb-2"class="ml-4"><b>Type restaurant:</b></p>
+    <div class="row justify-content-around text-center mx-1"> 
+        <div id="Fast_food" class="col-5 bg-white card py-1 mb-2" onclick="searchType('Fast_food')">Fast food</div>
+        <div id="Seafood" class="col-5 bg-white card py-1 mb-2" onclick="searchType('Seafood')">Seafood</div>
+        <div id="Grill" class="col-5 bg-white card py-1" onclick="searchType('Grill')">Grill</div>
+        <div id="All" class="col-5 bg-white card py-1" onclick="searchType('All')">All</div>
+    </div>
+
+    <div class="row justify-content-center m-0 mt-3 mb-5" id="content"></div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -34,7 +38,6 @@
     <script type="text/javascript" src="js/navigator.js"></script>
 </body>
 
-
 <footer style="background: #ffe9e9;" class="fixed-bottom text-center pt-2 border-top border-danger">
     <div class="row m-0 justify-content-center">
         <div class="col-4 align-self-center text-secondary" onclick="goToFeedback()">
@@ -46,7 +49,7 @@
             <p class="m-0" style="font-size: small; font-weight: bold;">Home</p>
         </div>
         <div class="col-4 align-self-center text-secondary" onclick="goToProfile()">
-            <i class="fa fa-calendar-check-o" style="font-size:x-large"></i>
+            <i class="fa fa-user" style="font-size:x-large"></i>
             <p class="m-0" style="font-size: small; font-weight: bold;">Profile</p>
         </div>
     </div>
