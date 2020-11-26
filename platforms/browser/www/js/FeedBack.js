@@ -25,6 +25,7 @@ function errorCB(err) {
     alert("Error processing SQL: " + err.code);
 }
 function successCB() {
+    alert("Adding the feedback success!")
     window.location.href = "home.html"
 }
 

@@ -81,5 +81,5 @@ function logout(){
 }
 
 function openEditProfile(){
-    window.location.href = "EditProfile.html";
+    window.location.href = "editProfile.html";
 }

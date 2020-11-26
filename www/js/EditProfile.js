@@ -1,3 +1,4 @@
+var db = window.openDatabase("i-Rate", "1.0", "iRate database", 1000000);
 document.addEventListener("deviceready", onDeviceReady, false);
 var user = JSON.parse(localStorage.getItem('user'));
 function onDeviceReady() {
@@ -86,7 +87,7 @@ function editProfile() {
                     function (tx, result) {
                         alert("The account information has changed successfully");
                         localStorage.setItem('user', JSON.stringify({ address: address.value, email: user.email, id: 3, job: job.value, name: name.value, password: user.telephone, telephone: telephone.value }))
-                        window.location.href = "Profile.html";
+                        window.location.href = "profile.html";
                     },
                     function (tx, error) {
                         console.log('ERROR:', error);

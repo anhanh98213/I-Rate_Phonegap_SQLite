@@ -1,7 +1,4 @@
 var db = window.openDatabase("i-Rate", "1.0", "iRate database", 1000000);
-
-
-
 function signUp() {
     var name = document.getElementById("name_field");
     var email = document.getElementById("email_field")
